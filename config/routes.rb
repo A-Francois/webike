@@ -1,25 +1,18 @@
 Rails.application.routes.draw do
-  get 'participants/new'
-  get 'participants/create'
-  get 'participants/destroy'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/destroy'
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/edit'
-  get 'bookings/update'
-  get 'bookings/destroy'
-  get 'rides/index'
-  get 'rides/show'
-  get 'rides/new'
-  get 'rides/create'
-  get 'rides/edit'
-  get 'rides/update'
-  get 'rides/destroy'
+  resources :rides do
+    resources :participants, only: [:new, :create]
+  end
+
+  resources :participants, only: [:destroy]
+
+  resources :hotels, only: [:index, :show] do
+    resources :bookings, only: [:new, :create]
+  end
+
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy]
+
+  # create a profile route instead of user
+
   devise_for :users
   root to: 'pages#home'
     resources :rides, only: [:new, :create]
