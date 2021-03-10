@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  be
   
   def index
     @bookings = Booking.where({ participant: })
