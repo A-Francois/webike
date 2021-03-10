@@ -13,7 +13,6 @@ file5 = URI.open('https://www.terre.tv/wp-content/uploads/2020/01/Narbonne-%C2%A
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
 Ride.destroy_all
-Hostel.destroy_all
 
 
 
