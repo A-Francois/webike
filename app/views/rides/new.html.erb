@@ -1,2 +1,30 @@
 <h1>Rides#new</h1>
 <p>Find me in app/views/rides/new.html.erb</p>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Create your trip !</h1>
+
+      <%= simple_form_for @bike do |f| %>
+        <%= f.input :title %>
+        <%= f.input :city_departure %>
+        <%= f.input :city_arrival %>
+        <%= f.input :departure_date %>
+        <%= f.input :arrival_date %>
+        <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, "Add a picture" class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-12 col-md-4">
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
