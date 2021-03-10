@@ -18,7 +18,8 @@ Ride.destroy_all
 
 puts "creating user..."
 user = User.create!(
-  name: "Paul Jack",
+  firstname: "Paul",
+  lastname: "Jack"
   email: "pauljack@gmail.com",
   password: "azerty")
 
