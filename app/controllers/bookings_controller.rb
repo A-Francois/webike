@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @participant = Participant.find(params[:participant_id])
     @booking.participant = @participant
     @booking.save
-    redirect_to_participant_path, notice: 'Your booking is confirmed.'
+    redirect_to_participant_path
 
   end
 
@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to_participant_path, notice: 'Your booking is cancelled.'
+    redirect_to_participant_path
 
   end
 
