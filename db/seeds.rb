@@ -13,15 +13,15 @@ file5 = URI.open('https://www.terre.tv/wp-content/uploads/2020/01/Narbonne-%C2%A
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
 Ride.destroy_all
-
+User.destroy_all
 
 
 puts "creating user..."
-user = User.create!(
+user_1 = User.create!(
   firstname: "Paul",
-  lastname: "Jack"
+  lastname: "Jack",
   email: "pauljack@gmail.com",
-  password: "azerty")
+  password: "azerty",)
 
 puts "creating rides..."
 puts "First one..."
@@ -31,9 +31,10 @@ ride_1 = Ride.new(
   city_arrival: 'Brest',
   departure_date:  '05/08/2021',
   arrival_date:  '10/08/2021' ,
-  description: "Let's ride along the Majestuous Atlantic Ocean discovering the most amazing landscapes."  ,
+  ride_description: "Let's ride along the Majestuous Atlantic Ocean discovering the most amazing landscapes.",
 )
 ride_1.photo.attach(io: file1, filename: 'ride1.png', content_type: 'image/png')
+ride_1.user = user_1
 ride_1.save!
 puts "Second one..."
 ride_2 = Ride.new(
@@ -42,9 +43,10 @@ ride_2 = Ride.new(
   city_arrival: 'Menton',
   departure_date:  '07/04/2021' ,
   arrival_date:  '10/04/2021' ,
-  description: "I would make a sportive run under the mediterranean sun, camaradery in rendez-vous!",
+  ride_description: "I would make a sportive run under the mediterranean sun, camaradery in rendez-vous!",
 )
 ride_2.photo.attach(io: file2, filename: 'ride2.png', content_type: 'image/png')
+ride_2.user = user_1
 ride_2.save!
 puts "Third one..."
 ride_3 = Ride.new(
@@ -53,9 +55,10 @@ ride_3 = Ride.new(
   city_arrival: 'Lille',
   departure_date: '24/06/2021 ',
   arrival_date:  '25/06/2021' ,
-  description: 'A family trip, chilling on the road to the beautiful city of Lille, everyone invited:)',
+  ride_description: 'A family trip, chilling on the road to the beautiful city of Lille, everyone invited:)',
 )
 ride_3.photo.attach(io: file3, filename: 'ride3.png', content_type: 'image/png')
+ride_3.user = user_1
 ride_3.save!
 puts "Fourth one..."
 ride_4 = Ride.new(
@@ -64,9 +67,10 @@ ride_4 = Ride.new(
   city_arrival: 'Turin',
   departure_date:  '31/07/2021' ,
   arrival_date:  '03/08/2021' ,
-  description: "Ride across the Alps from France to Italy!(Experimented level highly recommended)",
+  ride_description: "Ride across the Alps from France to Italy!(Experimented level highly recommended)",
 )
 ride_4.photo.attach(io: file4, filename: 'ride4.png', content_type: 'image/png')
+ride_4.user = user_1
 ride_4.save!
 puts "Last one..."
 ride_5 = Ride.new(
@@ -75,9 +79,10 @@ ride_5 = Ride.new(
   city_arrival: 'Narbonne',
   departure_date:  '15/07/2021' ,
   arrival_date:  '20/07/2021' ,
-  description: "You want discover the Occitanian Country? Come with us! Visit of historical monuments and regional cuisine in the programm!",
+  ride_description: "You want discover the Occitanian Country? Come with us! Visit of historical monuments and regional cuisine in the programm!",
 )
 ride_5.photo.attach(io: file5, filename: 'ride5.png', content_type: 'image/png')
+ride_5.user = user_1
 ride_5.save!
 puts "Rides created !"
 
