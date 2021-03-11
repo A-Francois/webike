@@ -8,10 +8,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @participant = Participant.find(params[:participant_id])
-    @booking.participant = @participant
-    @booking.save
+    booking = Booking.new
+    booking.hotel_id = params[:hotel]
+    booking.booking_start = params[:date]
+    booking.booking_end = booking.booking_start+1 
+    booking.participant_id = current_user.id
+    booking.save!
     redirect_to_participant_path
 
   end
@@ -32,6 +34,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:arrival_date)
+    params.require(:booking).permit(:arrival_date, :date, :hotel)
     end
   end
