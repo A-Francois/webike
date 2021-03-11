@@ -2,6 +2,10 @@ class RidesController < ApplicationController
   before_action :set_ride, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
+  def index
+    @rides = Ride.all
+  end
+
   def all_my_rides
     @ride.user = current_user
     if params[:query].present?
