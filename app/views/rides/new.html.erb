@@ -1,6 +1,6 @@
 <div class="container_new">
   <div class="row">
-  <div class="col-md-6">
+    <div class="col-md-6">
       <div class="container">
         <h1>Create your trip !</h1>
 
@@ -15,11 +15,12 @@
           <%= f.button :submit, class: 'btn btn-primary' %>
         <% end %>
       </div>
-  </div>
-  <div class="col-md-6">
-    <div class="container">
-      <%= image_tag "https://www.google.com/search?rlz=1C1VDKB_frFR937FR937&ei=BfNJYLq7MpyDjLsPufmsgAs&q=france+map&oq=france+map&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAELEDMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgoILhCwAxBDEJMCOgcILhCwAxBDOgcIABCwAxBDOgQIABBDOggIABCxAxCDAToECC4QQzoFCC4QsQM6CAgAEMcBEK8BUIoRWL8ZYOIhaAJwAngAgAGCAYgBxQKSAQM0LjGYAQCgAQGqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwj60e6DhqjvAhWcAWMBHbk8C7AQ4dUDCA0&uact=5#", class="map" %>
     </div>
-  </div>
+    <div class="col-md-6">
+      <div class="container">
+        <%= image_tag "https://www.france-map.fr/wp-content/uploads/2019/04/carte-de-france-g%C3%A9ographique-1024x993.jpg"%>
+        <%= link_to "Create", new_ride_path, class: "btn btn_create" %>
+      </div>
+    </div>
   </div>
 </div>
