@@ -17,36 +17,44 @@
   }
 }
 
+.ride-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
 .ride-card-content {
-  h5 {
-    font-size: 22px;
+
+  padding-bottom: 5px;
+
+  h3 {
+    font-size: 18px;
     font-weight: bold;
     padding-left: 10px;
     opacity: 0.7;
   }
 
-  h6 {
+  h4 {
     font-size: 16px;
+    font-weight: bold;
     padding-left: 10px;
-    padding-right: 10px;
+    opacity: 0.7;
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    opacity: 0.7;
   }
 
   p {
     padding-left: 10px;
+    font-size: 12px;
   }
 }
 
-.ride-card-action {
-  padding-left: 10px;
-  padding-bottom: 10px;
-  
-  a {
-    font-size: 14px;
-    color: red;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    opacity: 0.6;
-  }
+.ride-card-content:hover{
+height: 100%;
+width: 100%
 }
+
