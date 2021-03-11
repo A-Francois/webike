@@ -1,5 +1,6 @@
 class Ride < ApplicationRecord
   belongs_to :user
+  has_many :participants
 
   geocoded_by :city_departure
   geocoded_by :city_arrival

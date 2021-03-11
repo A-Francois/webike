@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <div class="banner-page text-center">
+    <h1>My bookings</h1>
+  </div>
+
+  <h5>My rides booked</h5>
+  <table class="table table-bordered">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Start date</th>
+        <th scope="col">End date</th>
+        <th scope="col">Rides</th>
+      </tr>
+    <tbody>
+      <% @rides.each do |ride| %>
+        <tr>
+          <th scope="row"> <%= booking.id %> </th>
+          <td> <%= ride.departure_date %> </td>
+          <td> <%= ride.arrival_date  %> </td>
+          <td> <%= ride.title %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h5>My hotels booked</h5>
+  <table class="table table-bordered">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Start date</th>
+        <th scope="col">End date</th>
+        <th scope="col">Hotel</th>
+      </tr>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <th scope="row"> <%= booking.id %> </th>
+          <td> <%= booking.booking_start %> </td>
+          <td> <%= booking.booking_end  %> </td>
+          <td> <%= booking.hotel.name %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
