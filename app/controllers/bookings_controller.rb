@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   
   def index
     @bookings = Booking.where({ participant: current_user })
+    @rides = current_user.rides
   end
 
   def show
