@@ -1,0 +1,26 @@
+<div class="container_new">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <h1>Create your trip !</h1>
+
+        <%= simple_form_for Ride.new do |f| %>
+          <%= f.input :title %>
+          <%= f.input :city_departure %>
+          <%= f.input :city_arrival %>
+          <%= f.input :departure_date %>
+          <%= f.input :arrival_date %>
+          <%= f.input :ride_description %>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <%= image_tag "https://www.france-map.fr/wp-content/uploads/2019/04/carte-de-france-g%C3%A9ographique-1024x993.jpg"%>
+        <%= link_to "Create", new_ride_path, class: "btn btn_create" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="banner-page text-center">
+    <h1>Our rides</h1>
+  </div>
+  <div class="container pt-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-15">
+        <div class="row">
+          <% @rides.each do |ride| %>
+            <div class="col-3">
+              <div class="ride-card">
+                <div class="ride-card-content">
+                  <%= cl_image_tag(ride.photo.key) %>
+                  <h3><%= ride.title %></h3>
+                  <h4><%= ride.city_departure %></h4>
+                  <h4><%= ride.city_arrival %></h4>
+                  <h5><%= ride.departure_date %></h5>
+                  <h5><%= ride.arrival_date %></h5>
+                  <h5><%= ride.ride_description %></h5>
+                </div>
+                <div class="ride-card-action">
+                  <%= link_to 'More', ride_path(ride) %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

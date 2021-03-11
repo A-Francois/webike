@@ -1,0 +1,22 @@
+<div class="container">
+  
+  <div class="banner-page">
+  	<h1>Book your sleeping place</h1>
+  </div>
+  
+  <div class="container-card">
+  	<div class="row">
+	    <div class="hotel-card">
+	  	  <div class="hotel-card-content">
+	  	  	<h3><%= hotels.name %></h3>
+	  	  	<h4><%= hotels.city %></h4>
+	  	  	<h5><%= hotels.description %></h5>
+	        <h5><%= hotels.price %></h5>
+	  	  </div>
+	  	  <div class="hotel-card-action">
+	  	  	<%= link_to 'Book', booking_path(booking) %>
+	  	  </div>
+	  	</div>
+	</div>
+  </div>
+</div>
