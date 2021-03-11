@@ -13,44 +13,18 @@ class RidesController < ApplicationController
     else
       @rides = Ride.all
     end
-
-    @markers = @rides.geocoded.map do |ride|
-      {
-        lat: ride.latitude,
-        lng: ride.longitude
-      }
-    end
   end
 
   def show
-    @rides = Ride.all
   end
 
   def new
     @ride = Ride.new
   end
 
-  def geocode_the_start_address
-    coords = Geocoder.coordinates(self.start)
-    self.start_lat = coords[0]
-    self.start_long = coords[1]
-  end
-
-  def geocode_the_arrival_address
-    coords = Geocoder.coordinates(self.start)
-    self.arrival_lat = coords[0]
-    self.arrival_long = coords[1]
-  end
-
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
-    @ride.title = ride_params[:title].last
-    @ride.city_departure = ride_params[:city_departure].last
-    @ride.city_arrival = ride_params[:city_arrival].last
-    @ride.departure_date = ride_params[:departure_date]
-    @ride.arrival_date = ride_params[:arrival_date]
-    @ride.ride_description = ride_params[:description]
     if @ride.save
       redirect_to @ride, notice: 'Your ride was successfully created.'
     else
