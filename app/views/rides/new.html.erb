@@ -1,30 +1,25 @@
-<h1>Rides#new</h1>
-<p>Find me in app/views/rides/new.html.erb</p>
+<div class="container_new">
+  <div class="row">
+  <div class="col-md-6">
+      <div class="container">
+        <h1>Create your trip !</h1>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>Create your trip !</h1>
-
-      <%= simple_form_for @bike do |f| %>
-        <%= f.input :title %>
-        <%= f.input :city_departure %>
-        <%= f.input :city_arrival %>
-        <%= f.input :departure_date %>
-        <%= f.input :arrival_date %>
-        <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
-        <%= f.button :submit, "Add a picture" class: 'btn btn-primary' %>
-      <% end %>
+        <%= simple_form_for Ride.new do |f| %>
+          <%= f.input :title %>
+          <%= f.input :city_departure %>
+          <%= f.input :city_arrival %>
+          <%= f.input :departure_date %>
+          <%= f.input :arrival_date %>
+          <%= f.input :ride_description %>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+  </div>
+  <div class="col-md-6">
+    <div class="container">
+      <%= image_tag "https://www.google.com/search?rlz=1C1VDKB_frFR937FR937&ei=BfNJYLq7MpyDjLsPufmsgAs&q=france+map&oq=france+map&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAELEDMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgoILhCwAxBDEJMCOgcILhCwAxBDOgcIABCwAxBDOgQIABBDOggIABCxAxCDAToECC4QQzoFCC4QsQM6CAgAEMcBEK8BUIoRWL8ZYOIhaAJwAngAgAGCAYgBxQKSAQM0LjGYAQCgAQGqAQdnd3Mtd2l6yAEKwAEB&sclient=gws-wiz&ved=0ahUKEwj60e6DhqjvAhWcAWMBHbk8C7AQ4dUDCA0&uact=5#", class="map" %>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="col-12 col-md-4">
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
   </div>
 </div>
