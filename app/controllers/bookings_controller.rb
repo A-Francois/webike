@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-
+  
   def index
-    #@bookings = Booking.where({ participant: })
+    @bookings = Booking.where({ participant: current_user })
   end
 
   def show
@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking.participant = @participant
     @booking.save
     redirect_to_participant_path
+
   end
 
   def edit
@@ -25,11 +26,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to_participant_path
+
   end
 
   private
 
   def booking_params
     params.require(:booking).permit(:arrival_date)
+    end
   end
-end
