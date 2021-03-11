@@ -1,3 +1,7 @@
+.navbar-home {
+  background: transparent !important;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -9,4 +13,28 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+}
+
+.tab-underlined:hover {
+  border-bottom: 3px solid #555555;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
 }

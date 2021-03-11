@@ -1,7 +1,6 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
   height: 100vh;
 }
 
@@ -12,6 +11,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 44px;
   font-weight: bold;
+  padding-top: 200px;
 }
 
 .banner p {
@@ -21,6 +21,20 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.btn-ghost {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: white;
+}
 .banner-page {
   font-size: 20px;
 }
