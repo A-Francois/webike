@@ -31,14 +31,5 @@
 
 
 
-
-
-
-<!-- ne pas effacer...... -->
-<%= link_to "liste des hotels", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %>
-
-<!-- @ride.city_arrival -->
-<!-- @ride.arrival_date -->
-<!-- wissant à remplacer par @...... -->
-<!-- date a remplacer  -->
-
+<div class="btn btn-primary"> <%= link_to "Join", ride_participants_path(@ride), method: :post %></div>
+<div class="btn btn-primary"><%= link_to "Hotel's list", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>

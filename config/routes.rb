@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :participants, only: [:new, :create]
   end
 
-  resources :participants, only: [:destroy]
+  resources :participants, only: [:new, :destroy]
 
   resources :hotels, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
