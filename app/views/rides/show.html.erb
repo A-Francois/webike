@@ -1,4 +1,5 @@
 
+
 <div class="row">
   <div class="col-md-4">
     <div class="container">
@@ -19,16 +20,30 @@
 <div class="btn btn-primary"><%= link_to "Book Hotel", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
     </div>
   </div>
-  <div class="col-md-8">
-    <div class="container">
-      <div id='map' class="map"></div>
-      <div id="instructions" class="instructions"></div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="container">
+        <h2><%= @ride.title  %></h2>
+        <p>City departure : <%= @ride.city_departure %></p>
+        <p data-startlg="<%= @ride.start_long %>" data-startlt="<%= @ride.start_lat %>" id="start"></p>
+        <br>
+        <p>City arrival : <%=  @ride.city_arrival%></p>
+        <p data-endlg="<%= @ride.end_long %>" data-endlt="<%= @ride.end_lat %>" id="end"></p>
+        <br>
+        <p>Departure Date: <%= @ride.departure_date %></p>
+        <p>Arrival Date: <%=  @ride.arrival_date%></p>
+        <p id="distance">KM : </p>
+        <p id="duration">Hours of Ride : </p>
+        <p>Description : <%= @ride.ride_description %> </p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="container">
+        <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" id='map' class="map"></div>
+        <div id="instructions" class="instructions"></div>
+      </div>
+
     </div>
   </div>
 </div>
-
-
-
-
-
 

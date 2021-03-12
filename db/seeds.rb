@@ -54,7 +54,7 @@ puts "First one..."
 ride_1 = Ride.new(
   title: 'Ride along the Atlantic',
   city_departure: 'Biarritz',
-  city_arrival: 'Brest',
+  city_arrival: 'Bordeaux',
   departure_date:  '05/08/2021',
   arrival_date:  '10/08/2021' ,
   ride_description: "Let's ride along the Majestuous Atlantic Ocean discovering the most amazing landscapes.",
@@ -148,7 +148,7 @@ hotel_14 = Hotel.new(
 hotel_14.photo.attach(io: file64, filename: 'hotel14.png', content_type: 'image/png')
 hotel_14.save!
 hotel_15 = Hotel.new(
-  name: "Hotel Escale Oceania Brest",
+  name: "Hotel Escale Oceania",
   city: "Brest",
   hotel_description: "Located just 5 minutes' walk from the tramway, Porte de Gouesnou stop, at the heart of the business district, and close to the airport, our hotel is a perfect stopover!",
   price: "79"
@@ -167,7 +167,7 @@ hotel_21 = Hotel.new(
 hotel_21.photo.attach(io: file71, filename: 'hotel21.png', content_type: 'image/png')
 hotel_21.save!
 hotel_22 = Hotel.new(
-  name: "Hotel Mediterranee Menton",
+  name: "Hotel Mediterranee",
   city: "Menton",
   hotel_description: "89 rooms and 5 apartments for rent, the Hotel Méditerranée welcomes you in a warm, modern setting.",
   price: "140"
