@@ -3,29 +3,29 @@
   <div class="banner-page text-center">
   	<h1>Book your sleeping place</h1>
   </div>
-  
+
   <div class="container">
   	<div class="row justify-content-center">
 	  <div class="col-12">
 	    <div class ="row">
-	      
+
 	      <% @hotels.each do |hotel| %>
 		    <div class="col-3">
-			    
+
 			    <div class ="hotel-card">
-			      
+
 			      <div class="hotel-card-top">
 			        <%= cl_image_tag(hotel.photo.key) %>
 			      </div>
-				  
+
 				  <div class="hotel-card-content">
 				    <h3><%= hotel.name %></h3>
 				  	<h4><%= hotel.city %></h4>
 				  	<h5><%= hotel.hotel_description %></h5>
 			        <h5><%= hotel.price %>€</h5>
 				  </div>
-				  
-				  <div class="hotel-card-action btn btn-primary"> <%=link_to "Book this hotel", bookings_path(hotel:hotel, date:@date), method: :post%>
+
+				  <div class="hotel-card-action btn btn-primary"> <%=link_to "Book this hotel", bookings_path(hotel:hotel, date:@date, ride_id: params[:ride_id]), method: :post%>
 				  </div>
 				</div>
 
