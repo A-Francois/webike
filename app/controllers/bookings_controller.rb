@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
-  
+
   def index
-    @bookings = Booking.where({ participant: current_user })
+    @bookings = []
+    current_user.participants.each { |participant| participant.bookings.each { |booking| @bookings << booking } }
     @rides = current_user.rides
   end
 
@@ -12,11 +13,11 @@ class BookingsController < ApplicationController
     booking = Booking.new
     booking.hotel_id = params[:hotel]
     booking.booking_start = params[:date]
-    booking.booking_end = booking.booking_start+1 
-    booking.participant_id = current_user.id
-    booking.save!
-    redirect_to_participant_path
+    booking.booking_end = booking.booking_start+1
+    participant = Participant.where(ride_id: params[:ride_id], user_id: current_user.id)
 
+    booking.participant = participant.first
+    redirect_to bookings_path if booking.save
   end
 
   def edit
