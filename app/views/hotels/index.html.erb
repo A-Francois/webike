@@ -1,11 +1,12 @@
 <div class="container">
-  
-  <div class="banner-page">
+
+  <div class="banner-page text-center">
   	<h1>Book your sleeping place</h1>
   </div>
   
   <div class="container-card">
-  	<div class="row">
+  	<div class="row justify-content-center">
+  	  <div class="col-12 col-md-15">
 	    <div class="hotel-card">
 	  	 <% @hotels.each do |hotel|%>
 	  	  <div class="hotel-card-content">
@@ -20,6 +21,7 @@
 	  	  </div>
 	  	  <%end%>
 	  	</div>
+	  </div>
 	</div>
   </div>
 </div>

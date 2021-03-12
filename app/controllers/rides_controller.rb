@@ -13,33 +13,13 @@ class RidesController < ApplicationController
     else
       @rides = Ride.all
     end
-
-    @markers = @rides.geocoded.map do |ride|
-      {
-        lat: ride.latitude,
-        lng: ride.longitude
-      }
-    end
   end
 
   def show
-    @rides = Ride.all
   end
 
   def new
     @ride = Ride.new
-  end
-
-  def geocode_the_start_address
-    coords = Geocoder.coordinates(self.start)
-    self.start_lat = coords[0]
-    self.start_long = coords[1]
-  end
-
-  def geocode_the_arrival_address
-    coords = Geocoder.coordinates(self.start)
-    self.arrival_lat = coords[0]
-    self.arrival_long = coords[1]
   end
 
   def create

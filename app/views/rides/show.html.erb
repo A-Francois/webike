@@ -1,5 +1,30 @@
-<h1>Rides#show</h1>
-<p>Find me in app/views/rides/show.html.erb</p>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="container">
+      <h1>Here is your ride</h1>
+      <%= @ride.title  %>
+      <p>City departure : <%= @ride.city_departure %></p>
+      <p data-startlg="<%= @ride.start_long %>" data-startlt="<%= @ride.start_lat %>" id="start" >Lat : <%= @ride.start_lat %>  - Long: <%= @ride.start_long %></p>
+      <br>
+      <p>City arrival : <%=  @ride.city_arrival%></p>
+      <p data-endlg="<%= @ride.end_long %>" data-endlt="<%= @ride.end_lat %>" id="end">Lat : <%= @ride.end_lat %>  - Long: <%= @ride.end_long %></p>
+      <br>
+      <p>Departure Date: <%= @ride.departure_date %></p>
+      <p>Arrival Date: <%=  @ride.arrival_date%></p>
+      <p>KM : </p>
+      <p>Hours of Ride : </p>
+      <p>Description : <%= @ride.ride_description %> </p>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="container">
+      <div id='map' class="map"></div>
+      <div id="instructions" class="instructions"></div>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -12,3 +37,4 @@
 <!-- @ride.arrival_date -->
 <!-- wissant à remplacer par @...... -->
 <!-- date a remplacer  -->
+
