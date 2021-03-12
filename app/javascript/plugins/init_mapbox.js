@@ -49,6 +49,10 @@ const initMapbox = () => {
       console.log(data.legs[0].steps)
       // get the sidebar and add the instructions
         var instructions = document.getElementById('instructions');
+        const distance = document.getElementById("distance");
+        const duration = document.getElementById("duration");
+        distance.innerHTML = `Kilometers = ${data.distance/1000}`
+        duration.innerHTML = `Minutes = ${Math.floor(data.duration / 60)}`
         var steps = data.legs[0].steps;
         var tripInstructions = [];
         for (var i = 0; i < steps.length; i++) {
