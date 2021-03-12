@@ -6,6 +6,13 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
-img{
-box-shadow: 0 0 15px;
+
+#image-new-ride{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-image: url(https://static.wixstatic.com/media/73a767_eff4b6d6232b429eb34455e91b9bf10d~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_80,usm_0.66_1.00_0.01/73a767_eff4b6d6232b429eb34455e91b9bf10d~mv2.jpg);
+  background-position: left;
+  background-size: cover;
+  height:600px;
+  border-radius: 3px;
 }
+
