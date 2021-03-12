@@ -41,6 +41,7 @@ puts "Cleaning database..."
 Ride.destroy_all
 User.destroy_all
 Hotel.destroy_all
+Participant.destroy_all
 
 puts "creating user..."
 user_1 = User.create!(
