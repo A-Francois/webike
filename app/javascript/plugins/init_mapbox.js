@@ -16,7 +16,7 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) { // only build a map if there's a div#map to inject into
     console.log('map')
-    mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xhc2R1Y2hhbXAiLCJhIjoiY2ttM21od2R0MmpnZjJwbzZxc2g4d2JwZiJ9.BJQXu7puAad5iZy6jLfMOQ';
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10',
@@ -51,8 +51,8 @@ const initMapbox = () => {
         var instructions = document.getElementById('instructions');
         const distance = document.getElementById("distance");
         const duration = document.getElementById("duration");
-        distance.innerHTML = `Kilometers = ${data.distance/1000}`
-        duration.innerHTML = `Minutes = ${Math.floor(data.duration / 60)}`
+        distance.innerHTML = `Kilometers = ${Math.round(data.distance/1000)}`
+        duration.innerHTML = `Hours = ${Math.floor(data.duration / 3600)}`
         var steps = data.legs[0].steps;
         var tripInstructions = [];
         for (var i = 0; i < steps.length; i++) {
