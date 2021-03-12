@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+ # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 require "open-uri"
 
@@ -7,12 +7,12 @@ file2 = URI.open('https://www.terre.tv/wp-content/uploads/2020/02/Menton-%C2%A9-
 file3 = URI.open('https://d1bvpoagx8hqbg.cloudfront.net/originals/erasmus-experience-lille-france-veronika-132dbe92a3544efead4016df9b79cc1e.jpg')
 file4 = URI.open('https://c2.staticflickr.com/8/7422/12943457434_744c2c9869_b.jpg')
 file5 = URI.open('https://www.terre.tv/wp-content/uploads/2020/01/Narbonne-%C2%A9-iStock.jpg')
-file61 = URI.open('https://media-cdn.tripadvisor.com/media/photo-w/15/28/c9/73/la-paix-hotel-contemporain.jpg')
-file62 = URI.open('https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/bc/30/81/exterior.jpg')
-file63 = URI.open('https://media-cdn.tripadvisor.com/media/photo-o/1c/ba/ce/71/exterior-view.jpg')
-file64 = URI.open('https://media-cdn.tripadvisor.com/media/photo-w/13/c2/95/a9/brest-hotel-saint-louis.jpgs')
-file65 = URI.open('https://media-cdn.tripadvisor.com/media/photo-o/08/79/5c/76/hotel-escale-oceania.jpg')
-file71 = URI.open('https://media-cdn.tripadvisor.com/media/photo-o/09/21/ec/c6/hotel-napoleon.jpg')
+file61 = URI.open('https://www.orangesmile.com/hotelguidephoto/brest-hoteldelapaix.jpg')
+file62 = URI.open('https://medias.bestwestern.fr/props_iceportal/93686/66640142_XL.jpg?frz-v=18')
+file63 = URI.open('https://images.dayuse.com/50QcYsf-Ko4C-jLDfGiIrv9Iy50=/0x480/hotels/333-12691/383bfc9d6a84f42bd46cdbf411a8c64b-ibis-brest-kergaradec-aeroport.jpeg')
+file64 = URI.open('https://s-ec.bstatic.com/images/hotel/max1024x768/476/4760637.jpg')
+file65 = URI.open('https://static.travelagewest.com/i/sized/780/437/media.iceportal.com/120359/photos/64478547_XL.jpg')
+file71 = URI.open('https://www.napoleon-menton.com/wcms/img/hotel-napoleon-gallery-sizel-404851-1600-1200.jpg')
 file72 = URI.open('https://media-cdn.tripadvisor.com/media/photo-o/1a/85/77/26/img-20200106-102138-largejpg.jpg')
 file73 = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/01/f1/7c/ed/hotel-lemon.jpg')
 file74 = URI.open('https://media-cdn.tripadvisor.com/media/photo-o/0f/a2/52/b7/facade.jpg')
