@@ -1,22 +1,20 @@
 import mapboxgl from 'mapbox-gl';
-
-const start = document.querySelector("#start")
-const startLg = start.dataset.startlg
-const startLt = start.dataset.startlt
-
-const end = document.querySelector("#end")
-const endLg = end.dataset.endlg
-const endLt = end.dataset.endlt
-
-
-
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) { // only build a map if there's a div#map to inject into
+    const startElement = document.querySelector("#start")
+    const startLg = startElement.dataset.startlg
+    const startLt = startElement.dataset.startlt
+
+    const endElement = document.querySelector("#end")
+    const endLg = endElement.dataset.endlg
+    const endLt = endElement.dataset.endlt
     console.log('map')
+
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10',
@@ -131,7 +129,7 @@ const initMapbox = () => {
         });
         // this is where the code from the next step will go
         // ADD ORIGIN AND DESTINATION
-        
+
             var coords = [endLg, endLt]
             var end = {
               type: 'FeatureCollection',
@@ -172,7 +170,7 @@ const initMapbox = () => {
               });
             }
             getRoute(coords);
-        
+
     });
   }
 };
