@@ -34,7 +34,7 @@
 
 
 <!-- ne pas effacer...... -->
-<%= link_to "liste des hotels", hotels_path(query:"marseille", arrival_date:"2021-07-15") %>
+<%= link_to "liste des hotels", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %>
 
 <!-- @ride.city_arrival -->
 <!-- @ride.arrival_date -->
