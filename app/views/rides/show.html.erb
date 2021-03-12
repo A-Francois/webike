@@ -1,6 +1,24 @@
-<div class="container">
-  <div class="banner-page text-center">
-    <h1>Ride details</h1>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="container">
+      <h1>Here is your ride</h1>
+      <%= @ride.title  %>
+      <p>City departure : <%= @ride.city_departure %></p>
+      <p data-startlg="<%= @ride.start_long %>" data-startlt="<%= @ride.start_lat %>" id="start" >Lat : <%= @ride.start_lat %>  - Long: <%= @ride.start_long %></p>
+      <br>
+      <p>City arrival : <%=  @ride.city_arrival%></p>
+      <p data-endlg="<%= @ride.end_long %>" data-endlt="<%= @ride.end_lat %>" id="end">Lat : <%= @ride.end_lat %>  - Long: <%= @ride.end_long %></p>
+      <br>
+      <p>Departure Date: <%= @ride.departure_date %></p>
+      <p>Arrival Date: <%=  @ride.arrival_date%></p>
+      <p>KM : </p>
+      <p>Hours of Ride : </p>
+      <p>Description : <%= @ride.ride_description %> </p>
+      <div class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post %></div>
+<div class="btn btn-primary"><%= link_to "Book Hotel", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-4">
@@ -28,8 +46,3 @@
     </div>
   </div>
 </div>
-
-
-
-<div class="btn btn-primary"> <%= link_to "Join", ride_participants_path(@ride), method: :post %></div>
-<div class="btn btn-primary"><%= link_to "Hotel's list", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date, ride_id: @ride.id) %></div>
