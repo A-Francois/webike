@@ -54,7 +54,7 @@ puts "First one..."
 ride_1 = Ride.new(
   title: 'Ride along the Atlantic',
   city_departure: 'Biarritz',
-  city_arrival: 'Brest',
+  city_arrival: 'Bordeaux',
   departure_date:  '05/08/2021',
   arrival_date:  '10/08/2021' ,
   ride_description: "Let's ride along the Majestuous Atlantic Ocean discovering the most amazing landscapes.",
