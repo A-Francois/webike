@@ -3,6 +3,7 @@
   height: 600px;
 }
 
+
 .instructions {
   position: absolute;
   margin: 20px;
@@ -19,3 +20,12 @@
 .duration {
   font-size: 2em;
 }
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+img{
+box-shadow: 0 0 15px;
+}
+

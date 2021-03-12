@@ -1,28 +1,40 @@
 <div class="container">
 
   <div class="banner-page text-center">
-    <h1>Our next trips</h1>
+    <h1>Our rides</h1>
   </div>
-  <div class="container pt-4">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 col-md-15">
         <div class="row">
           <% @rides.each do |ride| %>
             <div class="col-3">
-              <div class="ride-card">
-                <div class="ride-card-content">
-                  <%= cl_image_tag(ride.photo.key) %>
-                  <h3><%= ride.title %></h3>
-                  <h4><%= ride.city_departure %></h4>
-                  <h4><%= ride.city_arrival %></h4>
-                  <h5><%= ride.departure_date %></h5>
-                  <h5><%= ride.arrival_date %></h5>
-                  <h5><%= ride.ride_description %></h5>
+              <%= link_to ride_path(ride) do %>
+                <div class="ride-card">
+
+                  <div class="ride-card-top">
+                    <%= cl_image_tag(ride.photo.key) %>
+                    <div class="ride-card-itinerary">
+                      <h4><%= ride.title %></h4>
+                      <i class="fas fa-arrow-down"></i>
+                      <h4><%= ride.city_departure %></h4>
+                    </div>
+                  </div>
+
+                  <div class="ride-card-bot">
+                    <div class="ride-card-calendar">
+                      <i class="far fa-calendar-alt mb-3"></i>
+                      <h5><%= ride.departure_date %></h5>
+                      <h5><%= ride.arrival_date %></h5>
+                    </div>
+                    <div class="ride-card-distance">
+                      <i class="fas fa-road mb-3"></i>
+                      <h4>X km</h4>
+                    </div>
+                  </div>
+
                 </div>
-                <div class="ride-card-action">
-                  <%= link_to 'More', ride_path(ride) %>
-                </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>

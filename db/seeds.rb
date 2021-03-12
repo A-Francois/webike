@@ -31,7 +31,7 @@ user_1 = User.create!(
 puts "creating rides..."
 puts "First one..."
 ride_1 = Ride.new(
-  title: 'Ride along the Atlantic Ocean',
+  title: 'Ride along the Atlantic',
   city_departure: 'Biarritz',
   city_arrival: 'Brest',
   departure_date:  '05/08/2021',
@@ -84,7 +84,7 @@ ride_5 = Ride.new(
   city_arrival: 'Narbonne',
   departure_date:  '15/07/2021' ,
   arrival_date:  '20/07/2021' ,
-  ride_description: "You want discover the Occitanian Country? Come with us! Visit of historical monuments and regional cuisine in the programm!",
+  ride_description: "You want discover Occitania ? Historical monuments and regional cuisine in the program!",
 )
 ride_5.photo.attach(io: file5, filename: 'ride5.png', content_type: 'image/png')
 ride_5.user = user_1

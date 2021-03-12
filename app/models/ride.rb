@@ -1,5 +1,6 @@
 class Ride < ApplicationRecord
   belongs_to :user
+  has_many :participants
 
   #after_validation :geocode, if: :will_save_change_to_city_departure?
   #after_validation :geocode, if: :will_save_change_to_city_arrival?
