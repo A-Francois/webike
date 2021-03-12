@@ -12,7 +12,9 @@ const initMapbox = () => {
     const endLg = endElement.dataset.endlg
     const endLt = endElement.dataset.endlt
     console.log('map')
-    mapboxgl.accessToken = 'pk.eyJ1Ijoibmljb2xhc2R1Y2hhbXAiLCJhIjoiY2ttNjlrbnlhMG00MzJwanhiNjY3cHlnNiJ9.tVdym874AWgMxZ57S3EiAg';
+
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10',
@@ -45,6 +47,10 @@ const initMapbox = () => {
       console.log(data.legs[0].steps)
       // get the sidebar and add the instructions
         var instructions = document.getElementById('instructions');
+        const distance = document.getElementById("distance");
+        const duration = document.getElementById("duration");
+        distance.innerHTML = `Kilometers = ${Math.round(data.distance/1000)}`
+        duration.innerHTML = `Hours = ${Math.floor(data.duration / 3600)}`
         var steps = data.legs[0].steps;
         var tripInstructions = [];
         for (var i = 0; i < steps.length; i++) {

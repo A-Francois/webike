@@ -14,16 +14,17 @@
         <br>
         <p>Departure Date: <%= @ride.departure_date %></p>
         <p>Arrival Date: <%=  @ride.arrival_date%></p>
-        <p>KM : </p>
-        <p>Hours of Ride : </p>
+        <p id="distance">KM : </p>
+        <p id="duration">Hours of Ride : </p>
         <p>Description : <%= @ride.ride_description %> </p>
       </div>
     </div>
     <div class="col-md-8">
       <div class="container">
-        <div id='map' class="map"></div>
+        <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" id='map' class="map"></div>
         <div id="instructions" class="instructions"></div>
       </div>
+
     </div>
   </div>
 </div>
