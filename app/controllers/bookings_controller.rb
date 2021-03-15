@@ -14,10 +14,10 @@ class BookingsController < ApplicationController
     booking.hotel_id = params[:hotel]
     booking.booking_start = params[:date]
     booking.booking_end = booking.booking_start+1
-    participant = Participant.where(ride_id: params[:ride_id], user_id: current_user.id)
+    participant = Participant.find(params[:participant_id])
 
-    booking.participant = participant.first
-    redirect_to bookings_path if booking.save
+    booking.participant = participant
+    redirect_to booking_path(booking) if booking.save
   end
 
   def edit

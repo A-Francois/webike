@@ -4,6 +4,7 @@ class HotelsController < ApplicationController
     if params[:query].present?
       @hotels = Hotel.where("city ILIKE ?","%#{params[:query]}%")
       @date = params[:arrival_date]
+      @participant = Participant.find(params[:participant_id])
     else
       @hotels = Hotel.all
     end

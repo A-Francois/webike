@@ -29,7 +29,7 @@
 			        <i><%= hotel.price %>€/night</i>
 				  </div>
 
-				  <div class="hotel-card-action btn btn-primary"> <%=link_to "Book this hotel", bookings_path(hotel:hotel, date:@date, ride_id: params[:ride_id]), method: :post%>
+				  <div class="hotel-card-action btn btn-primary"> <%=link_to "Book this hotel", participant_bookings_path(participant_id:@participant.id, hotel:hotel, hotel_id:hotel.id, date:@date, ride_id: params[:ride_id]), method: :post%>
 				  </div>
 				</div>
 			</div>

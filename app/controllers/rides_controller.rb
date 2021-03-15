@@ -16,6 +16,7 @@ class RidesController < ApplicationController
   end
 
   def show
+    @participant = Participant.find_by(user: current_user, ride: @ride)
   end
 
   def new

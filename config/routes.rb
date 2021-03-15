@@ -3,13 +3,16 @@ Rails.application.routes.draw do
     resources :participants, only: [:new, :create]
   end
 
-  resources :participants, only: [:new, :destroy]
-
-  resources :hotels, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+  resources :participants, only: [:new, :destroy] do
+    resources :hotels, only: [:index]
+      resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:index, :show, :edit, :update, :destroy, :create]
+  resources :hotels, only: [:index, :show] do
+    resources :bookings, only: [:create]
+  end
+
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy, :new, :create]
 
   # create a profile route instead of user
 
