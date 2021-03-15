@@ -1,8 +1,35 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="container_new">
+  <div class="banner-page text-center">
+    <h1>Your hotel reservation</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-6">
+      	
+      	<div class ="booking-card">
+      		<div class ="booking-card-welcome">
+		        <h4>Dear <%= @booking.participant.user.pseudo%>,</h4>
+		        <h4>welcome to <%= @booking.hotel.name%></h4>
+	        </div>
+	        <div class ="booking-card-details">
+		        <h5>Your booking details</h5>
+		        <p>
+		        <p>Check-in on <%= @booking.booking_start%></p>
+		        <p>Check-out on <%= @booking.booking_end%></p>
+	        </div>
+	        <div class ="booking-card-stay">
+		        <p>Enjoy your stay</p>
+		        <i class="fas fa-biking"></i> <i class="fas fa-swimming-pool"></i> <i class="fas fa-spa"></i> <i class="fas fa-coffee"></i> <i class="fas fa-wifi"></i>
+	        </div>
+	    </div>
+	  </div>
 
-
-hello
-
-
-
+      <div class="col-md-6">
+      	<div class="booking-image">
+	      <%= cl_image_tag(@booking.hotel.photo.key) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
