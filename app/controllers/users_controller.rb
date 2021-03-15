@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  params.require(:user).permit(:pseudo, :email, :password, :photo)
   def show
   end
 
