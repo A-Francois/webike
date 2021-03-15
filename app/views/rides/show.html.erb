@@ -22,6 +22,7 @@
         <% else %>
           <div id = "join-button" class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post, onclick:"showBook" %></div>
         <% end %>
+        <%= link_to 'Update my ride', @ride %>
       </div>
     </div>
     <div class="col-md-8">
