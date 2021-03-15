@@ -17,8 +17,11 @@
         <p id="distance">KM : </p>
         <p id="duration">Hours of Ride : </p>
         <p>Description : <%= @ride.ride_description %> </p>
-        <div class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post %></div>
-        <div class="btn btn-primary"><%= link_to "Book Hotel", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
+        <% if current_user.participant?(@ride) %>
+          <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", hotels_path(query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
+        <% else %>
+          <div id = "join-button" class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post, onclick:"showBook" %></div>
+        <% end %>
       </div>
     </div>
     <div class="col-md-8">
