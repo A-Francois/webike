@@ -23,6 +23,9 @@ class RidesController < ApplicationController
     @ride = Ride.new
   end
 
+  def edit
+  end
+
   def create
     @ride = Ride.new(ride_params)
     @ride.user = current_user
