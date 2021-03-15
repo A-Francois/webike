@@ -7,3 +7,18 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
+.btn-black {
+  color: #3F4557;
+  border: 1px solid #3F4557;
+  background-color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0,6;
+  transition: opacity 0.3s ease;
+
+  .btn-black:hover{
+    background-color: #C3D178;
+  }
+}
