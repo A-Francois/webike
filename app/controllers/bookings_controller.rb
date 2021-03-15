@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = []
     current_user.participants.each { |participant| participant.bookings.each { |booking| @bookings << booking } }
-    @rides = current_user.rides
+    @rides = current_user.participant_rides
   end
 
   def show
