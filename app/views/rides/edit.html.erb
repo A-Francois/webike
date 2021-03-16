@@ -17,6 +17,8 @@
             <%= f.input :photo, as: :file %>
             <%= f.button :submit, class: 'btn btn-black' %>
           <% end %>
+          <%= link_to 'Show', @ride %> |
+          <%= link_to 'Back', rides_path %>
         </div>
       </div>
       <div class="col-md-6">
@@ -25,6 +27,3 @@
     </div>
   </div>
 </div>
-
-<%= link_to 'Show', @ride %> |
-<%= link_to 'Back', rides_path %>
