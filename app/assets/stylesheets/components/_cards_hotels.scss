@@ -88,7 +88,7 @@
 }
 
 .booking-card-welcome {
-  height: 100px;
+  height: 70px;
   position: absolute;
   top: 20%;
   left: 50%;
@@ -101,6 +101,8 @@
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-top: 10px;
+  border-top: groove;
 }
 
 .booking-card-stay {
@@ -109,4 +111,6 @@
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-top: groove;
+  padding-top: 10px;
 }
