@@ -28,10 +28,15 @@
           <p>Description : <%= @ride.ride_description %> </p>
         </div>
 
-        <div class="show-ride-book">
+        <div class="show-ride-avatar">
           <% @ride.participants.each do |participant| %>
           <%= cl_image_tag participant.user.photo.key, width: 40, height: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
+        </div>
+
+
+        <div class="show-ride-book">
+          
           <% if user_signed_in? && current_user.participant?(@ride) %>
             
           <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", participant_hotels_path(participant_id: @participant.id, query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
