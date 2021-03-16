@@ -19,5 +19,4 @@ class ParticipantsController < ApplicationController
     @participant.destroy
     redirect_to notice: 'Your participation has been removed from the ride !'
   end
-
 end
