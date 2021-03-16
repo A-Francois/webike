@@ -22,7 +22,10 @@
         <% else %>
           <div id = "join-button" class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post, onclick:"showBook" %></div>
         <% end %>
-
+        <div id = "join-button" class="btn btn-primary"> <%= link_to "Update my rides", edit_ride_path(@ride), onclick:"showBook" %></div>
+        <%= link_to ride_path(@ride), method: :delete do %>
+          <%= image_tag "https://image.flaticon.com/icons/png/512/70/70388.png", class: 'bin-icon' %>
+        <% end %>
       </div>
     </div>
     <div class="col-md-8">
