@@ -17,6 +17,11 @@
         <p id="distance">KM : </p>
         <p id="duration">Hours of Ride : </p>
         <p>Description : <%= @ride.ride_description %> </p>
+        <div class="avatar-show">
+          <% @ride.participants.each do |participant| %>
+          <%= cl_image_tag participant.user.photo.key, width: 40, height: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        </div>
         <% if user_signed_in? && current_user.participant?(@ride) %>
           <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", participant_hotels_path(participant_id: @participant.id, query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
         <% else %>
