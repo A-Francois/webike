@@ -49,13 +49,13 @@ const initMapbox = () => {
         var instructions = document.getElementById('instructions');
         const distance = document.getElementById("distance");
         const duration = document.getElementById("duration");
-        distance.innerHTML = `Kilometers = ${Math.round(data.distance/1000)}`
-        duration.innerHTML = `Hours = ${Math.floor(data.duration / 3600)}`
+        distance.innerHTML = `<i class="fas fa-road mb-3"></i> ${Math.round(data.distance/1000)} km <i class="far fa-clock"></i> ${Math.floor(data.duration / 3600)} h`
+        // duration.innerHTML = `<i class="far fa-clock"></i> ${Math.floor(data.duration / 3600)} h`
         var steps = data.legs[0].steps;
         var tripInstructions = [];
         for (var i = 0; i < steps.length; i++) {
         tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
-        instructions.innerHTML = '<br><span class="duration">Trip duration: ' + Math.floor(data.duration / 60) + ' min :bicyclist: </span>' + tripInstructions;
+        instructions.innerHTML = '<br><span class="duration">Expected duration ' + Math.floor(data.duration / 3600) + ' h';
         }
       var route = data.geometry.coordinates;
       var geojson = {
