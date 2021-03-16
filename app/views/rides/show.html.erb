@@ -36,7 +36,7 @@
 
 
         <div class="show-ride-book">
-          
+
           <% if user_signed_in? && current_user.participant?(@ride) %>
 
           <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", participant_hotels_path(participant_id: @participant.id, query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
@@ -59,7 +59,6 @@
     <div class="col-md-7">
       <div class="show-ride-image">
         <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" id='map' class="map"></div>
-        <div id="instructions" class="instructions"></div>
       </div>
     </div>
 

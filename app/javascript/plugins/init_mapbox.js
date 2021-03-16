@@ -7,11 +7,14 @@ const initMapbox = () => {
     const startElement = document.querySelector("#start")
     const startLg = startElement.dataset.startlg
     const startLt = startElement.dataset.startlt
+    console.log(startLg)
+    console.log(startLt)
 
     const endElement = document.querySelector("#end")
     const endLg = endElement.dataset.endlg
     const endLt = endElement.dataset.endlt
-    console.log('map')
+    console.log(endLt)
+    console.log(endLg)
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
@@ -20,10 +23,12 @@ const initMapbox = () => {
         style: 'mapbox://styles/mapbox/streets-v10',
         center: [startLg, startLt], // starting position
         //longitude, lat
-        zoom: 6
+        zoom: 1
       });
       // set the bounds of the map
-      //var bounds = [[endLg, endLt], [startLg, startLt]];
+      var bounds = [[endLg, endLt], [startLg, startLt]];
+      map.fitBounds(bounds, {padding: [100, 100]})
+      console.log("zoom:", map.getZoom())
       //map.setMaxBounds(bounds);
       // initialize the map canvas to interact with later
       var canvas = map.getCanvasContainer();
@@ -46,17 +51,17 @@ const initMapbox = () => {
       var data = json.routes[0];
       console.log(data.legs[0].steps)
       // get the sidebar and add the instructions
-        var instructions = document.getElementById('instructions');
+        //var instructions = document.getElementById('instructions');
         const distance = document.getElementById("distance");
         const duration = document.getElementById("duration");
         distance.innerHTML = `<i class="fas fa-road mb-3"></i> ${Math.round(data.distance/1000)} km <i class="far fa-clock"></i> ${Math.floor(data.duration / 3600)} h`
         // duration.innerHTML = `<i class="far fa-clock"></i> ${Math.floor(data.duration / 3600)} h`
-        var steps = data.legs[0].steps;
-        var tripInstructions = [];
-        for (var i = 0; i < steps.length; i++) {
-        tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
-        instructions.innerHTML = '<br><span class="duration">Expected duration ' + Math.floor(data.duration / 3600) + ' h';
-        }
+        // var steps = data.legs[0].steps;
+        // var tripInstructions = [];
+        // for (var i = 0; i < steps.length; i++) {
+        // tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
+        // instructions.innerHTML = '<br><span class="duration">Expected duration ' + Math.floor(data.duration / 3600) + ' h';
+        // }
       var route = data.geometry.coordinates;
       var geojson = {
         type: 'Feature',
