@@ -8,12 +8,10 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :firstname, presence: true, uniqueness: true
   validates :lastname, presence: true, uniqueness: true
-  validates :pseudo, presence: true, uniqueness: true
-  validates :photo, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   def participant?(ride)
-    rides.include?(ride)
+    participant_rides.include?(ride)
   end
 end

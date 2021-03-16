@@ -2,6 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 require "open-uri"
 
+file0 = URI.open('http://connor.anglican.org/cmsfiles/images/staff/J/Paul-Jack-KB1-sm.jpg')
 file1 = URI.open('https://www.ciel.fr/wp-content/uploads/2015/11/port-de-Brest.jpg')
 file2 = URI.open('https://www.terre.tv/wp-content/uploads/2020/02/Menton-%C2%A9-iStock.jpg')
 file3 = URI.open('https://d1bvpoagx8hqbg.cloudfront.net/originals/erasmus-experience-lille-france-veronika-132dbe92a3544efead4016df9b79cc1e.jpg')
@@ -44,11 +45,15 @@ Hotel.destroy_all
 Participant.destroy_all
 
 puts "creating user..."
-user_1 = User.create!(
+user_1 = User.new(
   firstname: "Paul",
   lastname: "Jack",
+  pseudo: "JP",
   email: "pauljack@gmail.com",
-  password: "azerty",)
+  password: "azerty",
+)
+user_1.photo.attach(io: file0, filename: 'user1.png', content_type: 'image/png')
+user_1.save!
 
 puts "creating rides..."
 puts "First one..."
