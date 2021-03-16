@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :rides do
-    resources :participants, only: [:new, :create]
+    resources :participants, only: [:new, :create, :update]
   end
 
   resources :participants, only: [:new, :destroy] do
@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   # create a profile route instead of user
 
   devise_for :users
+  resources :rides, only: [:destroy]
   root to: 'pages#home'
-    resources :rides, only: [:new, :create]
+    resources :rides, only: [:new, :create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
