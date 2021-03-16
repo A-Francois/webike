@@ -46,7 +46,7 @@ class RidesController < ApplicationController
 
   def destroy
     @ride.destroy
-    redirect_to ride_path(@ride), notice: 'Your ride was successfully deleted.'
+    redirect_to rides_path, notice: 'Your ride was successfully deleted.'
   end
 
   private
@@ -56,6 +56,6 @@ class RidesController < ApplicationController
   end
 
   def ride_params
-    params.require(:ride).permit(:title, :city_departure, :city_arrival, :departure_date, :arrival_date, :description, :photo, :user_id)
+    params.require(:ride).permit(:title, :city_departure, :city_arrival, :departure_date, :arrival_date, :ride_description, :photo, :user_id, :id)
   end
 end
