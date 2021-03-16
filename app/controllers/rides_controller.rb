@@ -3,7 +3,8 @@ class RidesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @rides = Ride.all
+      @myrides = Ride.where(user_id: params[:user])
+      @rides = Ride.all
   end
 
   def all_my_rides
