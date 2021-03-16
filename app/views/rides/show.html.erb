@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="banner-page text-center">
+    <h1>Ride's details</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="container">
+        <h2><%= @ride.title  %></h2>
+        <p>City departure : <%= @ride.city_departure %></p>
+        <p data-startlg="<%= @ride.start_long %>" data-startlt="<%= @ride.start_lat %>" id="start"></p>
+        <br>
+        <p>City arrival : <%=  @ride.city_arrival%></p>
+        <p data-endlg="<%= @ride.end_long %>" data-endlt="<%= @ride.end_lat %>" id="end"></p>
+        <br>
+        <p>Departure Date: <%= @ride.departure_date %></p>
+        <p>Arrival Date: <%=  @ride.arrival_date%></p>
+        <p id="distance">KM : </p>
+        <p id="duration">Hours of Ride : </p>
+        <p>Description : <%= @ride.ride_description %> </p>
+        <div class="avatar-show">
+          <% @ride.participants.each do |participant| %>
+          <%= cl_image_tag participant.user.photo.key, width: 40, height: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        </div>
+        <% if user_signed_in? && current_user.participant?(@ride) %>
+          <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", participant_hotels_path(participant_id: @participant.id, query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
+        <% else %>
+          <div id = "join-button" class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post, onclick:"showBook" %></div>
+        <% end %>
+        <div id = "join-button" class="btn btn-primary"> <%= link_to "Update my rides", edit_ride_path(@ride), onclick:"showBook" %></div>
+        <%= link_to 'Update my ride', edit_ride_path %>
+        <%= link_to ride_path(@ride), method: :delete do %>
+          <%= image_tag "https://image.flaticon.com/icons/png/512/70/70388.png", class: 'bin-icon' %>
+        <%  end %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="container">
+        <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" id='map' class="map"></div>
+        <div id="instructions" class="instructions"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
