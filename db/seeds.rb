@@ -2,7 +2,11 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 require "open-uri"
 
-file0 = URI.open('http://connor.anglican.org/cmsfiles/images/staff/J/Paul-Jack-KB1-sm.jpg')
+file01 = URI.open('http://connor.anglican.org/cmsfiles/images/staff/J/Paul-Jack-KB1-sm.jpg')
+file02 = URI.open('https://www.10wallpaper.com/wallpaper/1280x1024/1604/Chinese_youth_fashion_beauty_actress_photo_wallpaper_1280x1024.jpg')
+file03 = URI.open('http://www.fenzyme.com/wp-content/uploads/2014/10/hot-black-men-beard-styles-2.jpg')
+file04 = URI.open('https://qph.fs.quoracdn.net/main-qimg-a265c71564892e5b60a7506a5fb3cf7d')
+file05 = URI.open('https://www.meet-the-right-man.com/wp-content/uploads/2019/04/dating-eastern-european-men.jpg')
 file1 = URI.open('https://www.ciel.fr/wp-content/uploads/2015/11/port-de-Brest.jpg')
 file2 = URI.open('https://www.terre.tv/wp-content/uploads/2020/02/Menton-%C2%A9-iStock.jpg')
 file3 = URI.open('https://d1bvpoagx8hqbg.cloudfront.net/originals/erasmus-experience-lille-france-veronika-132dbe92a3544efead4016df9b79cc1e.jpg')
@@ -44,7 +48,8 @@ User.destroy_all
 Hotel.destroy_all
 Participant.destroy_all
 
-puts "creating user..."
+puts "creating users..."
+puts "First one..."
 user_1 = User.new(
   firstname: "Paul",
   lastname: "Jack",
@@ -52,8 +57,52 @@ user_1 = User.new(
   email: "pauljack@gmail.com",
   password: "azerty",
 )
-user_1.photo.attach(io: file0, filename: 'user1.png', content_type: 'image/png')
+user_1.photo.attach(io: file01, filename: 'user1.png', content_type: 'image/png')
 user_1.save!
+
+puts "Second one..."
+user_2 = User.new(
+  firstname: "Lin",
+  lastname: "Wei",
+  pseudo: "LinLin",
+  email: "linwei@gmail.com",
+  password: "azerty",
+)
+user_2.photo.attach(io: file02, filename: 'user2.png', content_type: 'image/png')
+user_2.save!
+
+puts "Third one..."
+user_3 = User.new(
+  firstname: "Moshe",
+  lastname: "Adewale",
+  pseudo: "Black Panther",
+  email: "mosheadewale@gmail.com",
+  password: "azerty",
+)
+user_3.photo.attach(io: file03, filename: 'user3.png', content_type: 'image/png')
+user_3.save!
+
+puts "Fourth one..."
+user_4 = User.new(
+  firstname: "Setare",
+  lastname: "Azad",
+  pseudo: "Safavi",
+  email: "setareazad@gmail.com",
+  password: "azerty",
+)
+user_4.photo.attach(io: file04, filename: 'user4.png', content_type: 'image/png')
+user_4.save!
+
+puts "Last one..."
+user_5 = User.new(
+  firstname: "Gaston",
+  lastname: "Beauregard",
+  pseudo: "Gas",
+  email: "gastonbeauregard@gmail.com",
+  password: "azerty",
+)
+user_5.photo.attach(io: file05, filename: 'user5.png', content_type: 'image/png')
+user_5.save!
 
 puts "creating rides..."
 puts "First one..."
@@ -78,7 +127,7 @@ ride_2 = Ride.new(
   ride_description: "I would make a sportive run under the mediterranean sun, camaradery in rendez-vous!",
 )
 ride_2.photo.attach(io: file2, filename: 'ride2.png', content_type: 'image/png')
-ride_2.user = user_1
+ride_2.user = user_2
 ride_2.save!
 puts "Third one..."
 ride_3 = Ride.new(
@@ -90,7 +139,7 @@ ride_3 = Ride.new(
   ride_description: 'A family trip, chilling on the road to the beautiful city of Lille, everyone invited:)',
 )
 ride_3.photo.attach(io: file3, filename: 'ride3.png', content_type: 'image/png')
-ride_3.user = user_1
+ride_3.user = user_3
 ride_3.save!
 puts "Fourth one..."
 ride_4 = Ride.new(
@@ -102,7 +151,7 @@ ride_4 = Ride.new(
   ride_description: "Ride across the Alps from France to Italy!(Experimented level highly recommended)",
 )
 ride_4.photo.attach(io: file4, filename: 'ride4.png', content_type: 'image/png')
-ride_4.user = user_1
+ride_4.user = user_4
 ride_4.save!
 puts "Last one..."
 ride_5 = Ride.new(
@@ -114,7 +163,7 @@ ride_5 = Ride.new(
   ride_description: "You want discover Occitania ? Historical monuments and regional cuisine in the program!",
 )
 ride_5.photo.attach(io: file5, filename: 'ride5.png', content_type: 'image/png')
-ride_5.user = user_1
+ride_5.user = user_5
 ride_5.save!
 puts "Rides created !"
 
