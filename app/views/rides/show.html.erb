@@ -5,7 +5,7 @@
   </div>
 
   <div class="row">
-    
+
     <div class="col-md-5">
 
       <div class="show-ride-card">
@@ -21,7 +21,7 @@
 
           <p>Departure on <%= @ride.departure_date %></p><p>Arrival on <%=  @ride.arrival_date%></p>
           <p id="distance" ></p>
-          
+
         </div>
 
         <div class="show-ride-description">
@@ -33,7 +33,7 @@
           <%= cl_image_tag participant.user.photo.key, width: 40, height: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <% if user_signed_in? && current_user.participant?(@ride) %>
-            
+
           <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", participant_hotels_path(participant_id: @participant.id, query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
           <% else %>
             <div id = "join-button" class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post, onclick:"showBook" %></div>

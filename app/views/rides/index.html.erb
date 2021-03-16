@@ -1,11 +1,17 @@
 <div class="container">
 
   <div class="banner-page text-center">
-    <h1>Our rides</h1>
+    <% if params[:user].present? %>
+        <h1>My rides</h1>
+      <% else %>
+        <h1>Our rides</h1>
+    <% end %>
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-      <% unless current_user.nil? %>
-        <%= link_to 'All rides', rides_path %>
-        <%= link_to 'My rides', rides_path(user: current_user) %>
+      <% unless current_user.nil? || params[:user] %>
+        <%= link_to 'My rides', rides_path(user: current_user), class: "btn btn-outline-secondary pl-4 pr-4" %>
+      <% end %>
+      <% if params[:user].present? %>
+        <%= link_to 'All rides', rides_path, class: "btn btn-outline-secondary pl-4 pr-4" %>
       <% end %>
     </div>
   </div>
