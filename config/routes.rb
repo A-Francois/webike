@@ -14,6 +14,11 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show, :edit, :update, :destroy, :new, :create]
 
+  resources :chatrooms, only: :show
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   # create a profile route instead of user
 
   devise_for :users
