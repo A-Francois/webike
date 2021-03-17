@@ -49,12 +49,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_154128) do
     t.index ["participant_id"], name: "index_bookings_on_participant_id"
   end
 
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -70,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_154128) do
     t.text "price"
   end
 
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -80,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_154128) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "participants", force: :cascade do |t|
     t.bigint "ride_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -133,8 +129,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_154128) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "hotels"
   add_foreign_key "bookings", "participants"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "participants", "rides"
   add_foreign_key "participants", "users"
   add_foreign_key "rides", "users"

@@ -48,6 +48,22 @@
   }
 }
 
+.hotel-card-description {
+  height: 60px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 100%;
+  padding: 0 10px;
+  transform: translate(-50%, -50%);
+  padding-top: 15px;
+
+  p {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
 .hotel-card-action {
   position: absolute;
   right: 10px;
@@ -98,7 +114,7 @@
 .booking-card-details {
   height: 100px;
   position: absolute;
-  top: 55%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding-top: 15px;
