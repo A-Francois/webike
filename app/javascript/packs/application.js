@@ -28,6 +28,7 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initChatroomCable } from '../channels/chatroom_channel';
+import { previewEditRide } from "../plugins/preview_edit_ride";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatpickr();
   initChatroomCable();
+  previewEditRide();
 });
 
