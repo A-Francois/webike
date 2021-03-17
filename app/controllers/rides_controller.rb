@@ -53,7 +53,7 @@ class RidesController < ApplicationController
 
   def destroy
     @ride.destroy
-    redirect_to account_rides_path, notice: 'Your ride was successfully deleted.'
+    redirect_to rides_path, notice: 'Your ride was successfully deleted.'
   end
 
   private
