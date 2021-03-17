@@ -20,10 +20,10 @@
 
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-15">
-        <div class="row">
+      <div class="col-12">
+        <div class="row ">
           <% @rides.each do |ride| %>
-            <div class="col-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
               <%= link_to ride_path(ride) do %>
                 <div class="ride-card">
                   <div class="ride-card-top">
