@@ -81,15 +81,10 @@
   padding-top: 10px;
 }
 
-.show-ride-title {
-  height: 80px;
-  padding-top: 10px;
-}
-
 .show-ride-details {
   height: 80px;
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -97,17 +92,21 @@
 .show-ride-description {
   height: 80px;
   position: absolute;
-  top: 55%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding-top: 10px;
   border-top: groove;
+
+  h6 {
+  font-weight: bold;
+  }
 }
 
 .show-ride-avatar {
   height: 40px;
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -119,4 +118,18 @@
   top: 95%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.create-ride-image {
+  background-size: cover;
+  background-position: center;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 550px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+
 }
