@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="banner-page text-center">
+    <% if params[:user].present? %>
+        <h1>My rides</h1>
+      <% else %>
+        <h1>Our rides</h1>
+    <% end %>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <% unless current_user.nil? || params[:user] %>
+        <%= link_to 'My rides', rides_path(user: current_user), class: "btn btn-outline-secondary pl-4 pr-4" %>
+      <% end %>
+      <% if params[:user].present? %>
+        <%= link_to 'All rides', rides_path, class: "btn btn-outline-secondary pl-4 pr-4" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-15">
+        <div class="row">
+          <% @rides.each do |ride| %>
+            <div class="col-3">
+              <%= link_to ride_path(ride) do %>
+                <div class="ride-card">
+                  <div class="ride-card-top">
+                    <%= cl_image_tag(ride.photo.key) %>
+                    <h3><%= ride.title %></h3>
+                    <div class="ride-card-itinerary">
+                      <h4><%= ride.city_departure %></h4>
+                      <i class="fas fa-arrow-down"></i>
+                      <h4><%= ride.city_arrival %></h4>
+                    </div>
+                  </div>
+                  <div class="ride-card-bot">
+                    <div class="ride-card-calendar">
+                      <i class="far fa-calendar-alt mb-3"></i>
+                      <h5><%= ride.departure_date %></h5>
+                      <h5><%= ride.arrival_date %></h5>
+                    </div>
+                    <div class="ride-card-distance">
+                      <i class="fas fa-road mb-3"></i>
+                      <% distance = Geocoder::Calculations.distance_between([ride.start_lat,ride.start_long], [ride.end_lat,ride.end_long]) %>
+                      <h4><%= distance.round %> km</h4>
+                    </div>
+                  </div>
+
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

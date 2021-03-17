@@ -1,0 +1,116 @@
+.hotel-card {
+  background-size: cover;
+  background-position: center;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+
+  img {
+    height: 200px;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.hotel-card-content {
+
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.8;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.8;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.8;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.hotel-card-action {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.hotel-card-price {
+  position: absolute;
+  right: 12px;
+  bottom: 40px;
+  font-size: 14px;
+}
+
+.booking-card {
+  background-size: cover;
+  background-position: center;
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 550px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+}
+
+.booking-image {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height:550px;
+  border-radius: 3px;
+  
+  img {
+    height: 550px;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.booking-card-welcome {
+  height: 70px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.booking-card-details {
+  height: 100px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 15px;
+  border-top: groove;
+}
+
+.booking-card-stay {
+  height: 100px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top: groove;
+  padding-top: 10px;
+}
