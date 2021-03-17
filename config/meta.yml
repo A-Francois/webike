@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "We Bike"
+meta_title: "We Bike - We gather to ride"
+meta_description: "Join us, organize or get in a bike trip and open yourself to beautiful people"
+meta_image: "cover.png" # should exist in `app/assets/images/`
