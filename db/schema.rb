@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_161136) do
     t.string "city_departure"
     t.string "city_arrival"
     t.string "title"
-    t.string "ride_description"
+    t.text "ride_description"
     t.float "start_lat"
     t.float "start_long"
     t.float "end_lat"

@@ -19,6 +19,14 @@ class User < ApplicationRecord
     participant_rides.include?(ride)
   end
 
+  def never_booked?(ride)
+    participants.where(ride: ride).first.bookings.size == 0
+  end
+
+  def get_hotel_booked(ride)
+    participants.where(ride: ride).first.bookings.first
+  end
+
   def photo?
     unless photo.attached?
       errors.add(:photo, 'is missing')
