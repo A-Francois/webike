@@ -1,6 +1,16 @@
 <div class="container">
   <div class="banner-page text-center">
     <h1><%= @ride.title  %></h1>
+    <% if user_signed_in? && @ride.user == current_user %>
+      <div>
+        <%= link_to edit_ride_path do %>
+          <%= image_tag "https://cdn.onlinewebfonts.com/svg/img_386644.png", class: 'edit-icon' %>
+        <% end %>
+        <%= link_to ride_path(@ride), method: :delete do %>
+          <%= image_tag "https://image.flaticon.com/icons/png/512/70/70388.png", class: 'bin-icon' %>
+        <%  end %>
+      </div>
+    <% end %>
   </div>
   <div class="row">
     <div class="col-md-7">
@@ -34,26 +44,14 @@
         <div class="show-ride-book">
           <% if user_signed_in? && current_user.participant?(@ride) && current_user.never_booked?(@ride) %>
             <div id= "book-button" class="btn btn-primary"><%= link_to "Book Hotel", participant_hotels_path(participant_id: @participant.id, query:@ride.city_arrival, arrival_date:@ride.arrival_date) %></div>
+            <div id= "chat-button" class="btn btn-secondary"><%= link_to "Chatroom", ride_chatrooms_path(@ride), method: :post %></div>
           <% elsif user_signed_in? && current_user.participant?(@ride) %>
             <div id= "book-button" class="btn btn-primary"><%= link_to "Your booking", booking_path(current_user.get_hotel_booked(@ride)) %></div>
           <% else %>
             <div id = "join-button" class="btn btn-primary"> <%= link_to "Join Ride", ride_participants_path(@ride), method: :post, onclick:"showBook" %></div>
           <% end %>
-          <% if user_signed_in? && @ride.user == current_user %>
-            <div id = "update-button">
-              <%= link_to edit_ride_path do %>
-                <%= image_tag "https://cdn.onlinewebfonts.com/svg/img_386644.png", class: 'edit-icon' %>
-              <% end %>
-              <%= link_to ride_path(@ride), method: :delete do %>
-                <%= image_tag "https://image.flaticon.com/icons/png/512/70/70388.png", class: 'bin-icon' %>
-              <%  end %>
-            </div>
-          <% end %>
         </div>
       </div>
-        <div class="ride-chatroom">
-          <div id= "chat-button" class="btn btn-secondary"><%= link_to "Chatroom", ride_chatrooms_path(@ride), method: :post %></div>
-        </div>
     </div>
   </div>
 </div>
