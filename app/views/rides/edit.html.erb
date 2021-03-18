@@ -14,11 +14,13 @@
             <%= f.input :departure_date, as: :string, required: false, input_html: {class: "datepicker"} %>
             <%= f.input :arrival_date, as: :string, required: false, input_html: {class: "datepicker"}   %>
             <%= f.input :ride_description %>
-            
+
           <% end %>
           <div class="show-ride-update">
-            <div id= "preview-button" class="btn btn-primary"><%= link_to "See preview", edit_ride_path(@ride) %></div>
-            <div id= "update-button" class="btn btn-secondary"><%= link_to "Validate Update", ride_path(@ride) %></div>
+            <div class="buttons-update">
+              <%= link_to "See preview", edit_ride_path(@ride), class:"btn btn-primary", id:"preview-ride-btn" %>
+              <%= link_to "Validate Update", ride_path(@ride), class:"btn btn-primary", id:"update-ride-btn" %>
+            </div>
           </div>
         </div>
       </div>
