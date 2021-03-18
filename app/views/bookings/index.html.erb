@@ -1,49 +1,51 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
+  <div class="bookings-table">
+    <div class="banner-page text-center">
+      <h1>My bookings</h1>
+    </div>
 
-  <div class="banner-page text-center">
-    <h1>My bookings</h1>
+    <h4>Rides</h4>
+    <table class="table table-bordered">
+        <tr>
+          <th scope="col"> Ref</th>
+          <th scope="col"> <i class="far fa-calendar-alt"></i>  Start date</th>
+          <th scope="col"> <i class="far fa-calendar-alt"></i> End date</th>
+          <th scope="col"> <i class="fas fa-road"></i> Rides</th>
+        </tr>
+      <tbody>
+        <% @rides.each do |ride| %>
+          <tr>
+            <th scope="row"> <%= ride.id %> </th>
+            <td> <%= ride.departure_date %> </td>
+            <td> <%= ride.arrival_date  %> </td>
+            <td> <%= link_to ride.title , ride_path(ride) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h4>Hotels</h4>
+    <table class="table table-bordered">
+        <tr>
+          <th scope="col">Ref</th>
+          <th scope="col"> <i class="far fa-calendar-alt"></i> Start date</th>
+          <th scope="col"> <i class="far fa-calendar-alt"></i> End date</th>
+          <th scope="col"> <i class="fas fa-hotel"></i> Hotel</th>
+        </tr>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <th scope="row"> <%= booking.id %> </th>
+            <td> <%= booking.booking_start %> </td>
+            <td> <%= booking.booking_end  %> </td>
+            <td> <%= link_to booking.hotel.name , booking_path(booking) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
   </div>
-
-  <h5>My rides booked</h5>
-  <table class="table table-bordered">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Start date</th>
-        <th scope="col">End date</th>
-        <th scope="col">Rides</th>
-      </tr>
-    <tbody>
-      <% @rides.each do |ride| %>
-        <tr>
-          <th scope="row"> <%= ride.id %> </th>
-          <td> <%= ride.departure_date %> </td>
-          <td> <%= ride.arrival_date  %> </td>
-          <td> <%= ride.title %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <h5>My hotels booked</h5>
-  <table class="table table-bordered">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Start date</th>
-        <th scope="col">End date</th>
-        <th scope="col">Hotel</th>
-      </tr>
-    <tbody>
-      <% @bookings.each do |booking| %>
-        <tr>
-          <th scope="row"> <%= booking.id %> </th>
-          <td> <%= booking.booking_start %> </td>
-          <td> <%= booking.booking_end  %> </td>
-          <td> <%= booking.hotel.name %> </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>
 <br>
