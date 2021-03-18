@@ -51,7 +51,7 @@ Hotel.destroy_all
 Participant.destroy_all
 
 puts "creating users..."
-puts "First one..."
+puts "First buddy..."
 user_1 = User.new(
   firstname: "Paul",
   lastname: "Jack",
@@ -62,7 +62,7 @@ user_1 = User.new(
 user_1.photo.attach(io: file01, filename: 'user1.png', content_type: 'image/png')
 user_1.save!
 
-puts "Second one..."
+puts "Second buddy..."
 user_2 = User.new(
   firstname: "Lin",
   lastname: "Wei",
@@ -73,18 +73,18 @@ user_2 = User.new(
 user_2.photo.attach(io: file02, filename: 'user2.png', content_type: 'image/png')
 user_2.save!
 
-puts "Third one..."
+puts "Third buddy..."
 user_3 = User.new(
-  firstname: "Moshe",
-  lastname: "Adewale",
-  pseudo: "Black Panther",
-  email: "mosheadewale@gmail.com",
+  firstname: "Magloire",
+  lastname: "Katanga",
+  pseudo: "Panther",
+  email: "magloirekatanga@gmail.com",
   password: "azerty",
 )
 user_3.photo.attach(io: file03, filename: 'user3.png', content_type: 'image/png')
 user_3.save!
 
-puts "Fourth one..."
+puts "Fourth buddy..."
 user_4 = User.new(
   firstname: "Setareh",
   lastname: "Azad",
@@ -95,7 +95,7 @@ user_4 = User.new(
 user_4.photo.attach(io: file04, filename: 'user4.png', content_type: 'image/png')
 user_4.save!
 
-puts "Last one..."
+puts "Last buddy..."
 user_5 = User.new(
   firstname: "Gaston",
   lastname: "Beauregard",
