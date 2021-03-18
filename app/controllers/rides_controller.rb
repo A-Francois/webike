@@ -45,7 +45,7 @@ class RidesController < ApplicationController
 
   def update
     if @ride.update(ride_params)
-      redirect_to @ride, notice: 'Your ride was successfully updated.'
+      redirect_to ride_path(@ride), notice: 'Your ride was successfully updated.'
     else
       render :edit
     end
