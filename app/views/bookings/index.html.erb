@@ -1,21 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
+  <div class="bookings-table">
+    <div class="banner-page text-center">
+      <h1>My bookings</h1>
+    </div>
 
-  <div class="banner-page text-center">
-    <h1>My bookings</h1>
-  </div>
-
-  <h5>My rides booked</h5>
-  <table class="table table-bordered">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Start date</th>
-        <th scope="col">End date</th>
-        <th scope="col">Rides</th>
-      </tr>
-    <tbody>
-      <% @rides.each do |ride| %>
+    <h4>Rides</h4>
+    <table class="table table-bordered">
         <tr>
           <th scope="row"> <%= ride.id %> </th>
           <td> <%= ride.departure_date %> </td>
@@ -27,20 +19,20 @@
               <%  end %>
           </td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <tbody>
+        <% @rides.each do |ride| %>
+          <tr>
+            <th scope="row"> <%= ride.id %> </th>
+            <td> <%= ride.departure_date %> </td>
+            <td> <%= ride.arrival_date  %> </td>
+            <td> <%= link_to ride.title , ride_path(ride) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <h5>My hotels booked</h5>
-  <table class="table table-bordered">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Start date</th>
-        <th scope="col">End date</th>
-        <th scope="col">Hotel</th>
-      </tr>
-    <tbody>
-      <% @bookings.each do |booking| %>
+    <h4>Hotels</h4>
+    <table class="table table-bordered">
         <tr>
           <th scope="row"> <%= booking.id %> </th>
           <td> <%= booking.booking_start %> </td>
@@ -51,8 +43,18 @@
               <%  end %>
           </td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <tbody>
+        <% @bookings.each do |booking| %>
+          <tr>
+            <th scope="row"> <%= booking.id %> </th>
+            <td> <%= booking.booking_start %> </td>
+            <td> <%= booking.booking_end  %> </td>
+            <td> <%= link_to booking.hotel.name , booking_path(booking) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 <br>
