@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = []
-    current_user.participants.each { |participant| participant.bookings.each { |booking| @bookings << booking } }
+    #current_user.participants.each { |participant| participant.bookings.each { |booking| @bookings << booking } }
+    current_user.participants.each { |participant| @bookings << participant.bookings.first if participant.bookings.first != nil }
     @rides = current_user.participant_rides
   end
 
