@@ -31,8 +31,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to_participant_path
-
+    redirect_to bookings_path, notice: 'Your booking has been removed !'
   end
 
   private
