@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :rides do
     resources :participants, only: [:new, :create, :update]
+    resources :chatrooms, only: [:show, :create] do
+      resources :messages, only: :create
+    end
   end
 
   resources :participants, only: [:new, :destroy] do
