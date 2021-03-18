@@ -16,7 +16,8 @@ class ParticipantsController < ApplicationController
   end
 
   def destroy
+    @participant = Participant.find(params[:id])
     @participant.destroy
-    redirect_to notice: 'Your participation has been removed from the ride !'
+    redirect_to bookings_path, notice: 'Your participation has been removed from the ride !'
   end
 end
