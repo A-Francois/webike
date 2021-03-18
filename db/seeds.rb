@@ -85,10 +85,10 @@ user_3.save!
 
 puts "Fourth one..."
 user_4 = User.new(
-  firstname: "Setare",
+  firstname: "Setareh",
   lastname: "Azad",
   pseudo: "Safavi",
-  email: "setareazad@gmail.com",
+  email: "setarehazad@gmail.com",
   password: "azerty",
 )
 user_4.photo.attach(io: file04, filename: 'user4.png', content_type: 'image/png')

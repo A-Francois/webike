@@ -1,33 +1,30 @@
 <div class="container">
-
   <div class="banner-page text-center">
-    <h1>Ride's details</h1>
+    <h1><%= @ride.title  %></h1>
   </div>
-
   <div class="row">
-
+    <div class="col-md-7">
+      <div class="show-ride-image">
+        <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" id='map' class="map"></div>
+      </div>
+    </div>
     <div class="col-md-5">
-
       <div class="show-ride-card">
-
-        <div class="show-ride-title">
-          <h3><%= @ride.title  %></h3>
-        </div>
-
         <div class="show-ride-details">
-          <p>From <%= @ride.city_departure %> To <%=  @ride.city_arrival%></p>
+          <h4><%= @ride.city_departure %></h4>
+          <i class="fas fa-arrow-down"></i>
+          <h4><%= @ride.city_arrival %></h4>
           <p data-startlg="<%= @ride.start_long %>" data-startlt="<%= @ride.start_lat %>" id="start"></p>
           <p data-endlg="<%= @ride.end_long %>" data-endlt="<%= @ride.end_lat %>" id="end"></p>
-
-          <p>Departure on <%= @ride.departure_date %></p><p>Arrival on <%=  @ride.arrival_date%></p>
+          <i class="far fa-calendar-alt mb-3"></i>
+          <p><%= @ride.departure_date %></p>
+          <p><%= @ride.arrival_date%></p>
           <p id="distance" ></p>
-
         </div>
-
         <div class="show-ride-description">
-          <p>Description : <%= @ride.ride_description %> </p>
+          <h6>Description : </h6>
+          <p><%= @ride.ride_description %> </p>
         </div>
-
         <div class="show-ride-avatar">
           <% @ride.participants.each do |participant| %>
           <%= cl_image_tag participant.user.photo.key, width: 40, height: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -56,14 +53,5 @@
           <div id= "chat-button" class="btn btn-secondary"><%= link_to "Chatroom", ride_chatrooms_path(@ride), method: :post %></div>
         </div>
     </div>
-
-
-    <div class="col-md-7">
-      <div class="show-ride-image">
-        <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>" id='map' class="map"></div>
-      </div>
-    </div>
-
   </div>
 </div>
-

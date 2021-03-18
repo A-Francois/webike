@@ -1,33 +1,27 @@
 <div class="container">
-
   <div class="banner-page text-center">
   	<h1>Book your sleeping place</h1>
   </div>
-
   <div class="container">
   	<div class="row justify-content-center">
 	  <div class="col-12">
 	    <div class ="row">
-
 	      <% @hotels.each do |hotel| %>
-		    <div class="col-3">
-
+		    <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
 			    <div class ="hotel-card">
-
 			      <div class="hotel-card-top">
 			        <%= cl_image_tag(hotel.photo.key) %>
 			      </div>
-
 				  <div class="hotel-card-content">
 				    <h3><%= hotel.name %></h3>
 				  	<h4><%= hotel.city %></h4>
-				  	<h5><%= hotel.hotel_description %></h5>
 				  </div>
 
-				  <div class="hotel-card-price">
-				  	<i class="fas fa-money-bill-alt mb-3"></i>
-			        <i><%= hotel.price %>€/night</i>
+                  <div class="hotel-card-description">
+					<div><i class="fas fa-money-bill-alt mb-3"></i>  <%= hotel.price %> €/night</div>
+				  	<p><%= hotel.hotel_description %></p>
 				  </div>
+
 
 				  <div class="hotel-card-action btn btn-primary"> <%=link_to "Book Hotel", participant_bookings_path(participant_id:@participant.id, hotel:hotel, hotel_id:hotel.id, date:@date, ride_id: params[:ride_id]), method: :post%>
 				  </div>
