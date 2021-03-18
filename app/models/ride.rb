@@ -1,6 +1,7 @@
 class Ride < ApplicationRecord
   belongs_to :user
   has_many :participants, dependent: :destroy
+  has_one :chatroom, dependent: :destroy
 
   #after_validation :geocode, if: :will_save_change_to_city_departure?
   #after_validation :geocode, if: :will_save_change_to_city_arrival?

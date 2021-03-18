@@ -44,6 +44,7 @@ file105 = URI.open('https://media-cdn.tripadvisor.com/media/photo-w/1b/a2/68/5f/
 
 puts "Cleaning database..."
 Message.destroy_all
+Chatroom.destroy_all
 Ride.destroy_all
 User.destroy_all
 Hotel.destroy_all
