@@ -37,7 +37,7 @@ class RidesController < ApplicationController
     @ride = Ride.new(ride_params)
     @ride.user = current_user
     if @ride.save
-      redirect_to @ride, notice: 'Your ride was successfully created.'
+      redirect_to ride_path(@ride), notice: 'Your ride was successfully created.'
     else
       render :new
     end
